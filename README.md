@@ -1,5 +1,30 @@
 # test 
 
+Todo: 
+
+прописать алиас на запросы 
+сделать сортировку комментариев по id 
+https://metanit.com/web/vuejs/2.5.php
+
+https://www.digitalocean.com/community/tutorials/vuejs-vue-pagination-component 
+
+
+
+
+https://jasonwatmore.com/post/2019/08/21/vue-js-simple-pagination-example
+
+https://npm.io/package/jw-vue-pagination
+npm i jw-vue-pagination  
+
+using jw-vue-pagination 
+
+https://www.youtube.com/watch?v=cuirNvBx8U8 
+
+
+
+
+https://github.com/jsdeemon/nuxr-test
+
 VUEJS REUSABLE PAGINATION COMPONENT 
 https://www.youtube.com/watch?v=M033S_-uHkQ 
 
