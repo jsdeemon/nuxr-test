@@ -1,0 +1,2 @@
+export const SORT_COMMENTS = 'SORT_COMMENTS'
+export const SET_SORT_COMMENTS = 'SET_SORT_COMMENTS'
