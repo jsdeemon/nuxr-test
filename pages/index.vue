@@ -1,7 +1,10 @@
 <template>
   <section>
 
-      <a @click.prevent="setsortcomments()"><button class="sort-id">Сортировать по id в обратном порядке</button></a>
+<div class="sort-id">
+
+</div>
+      
 
       <pagination
       :totalPages=" comments.length / perPage "
@@ -10,10 +13,11 @@
       @pagechanged="onPageChange"
     />
 <div class="table">
+ 
 <table>
     <thead>
   <tr>
-    <th>Id</th>
+    <th title="Щелкните для сортировки по id в обратном порядке" class="flex arrow" @click.prevent="setsortcomments()">Id</th>
     <th>Email</th>
     <th>Name</th>
   </tr>
@@ -70,6 +74,7 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 .sort-id {
+  text-align: center;
   background-color: #fff;
   color: #000;
   padding: 10px;
@@ -77,6 +82,17 @@ tr:nth-child(even) {
   font-size: 1em;
   cursor: pointer;
 
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+@media(min-width: 760px) {
+  .sort-id {
+    padding-left: 25% !important;
+    padding-right: 25% !important;
+  }
 }
 </style>
 
