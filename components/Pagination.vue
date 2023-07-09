@@ -1,18 +1,9 @@
 <template>
   <ul class="pagination">
 
-    <!-- <li class="pagination-item">
-      <button
-        type="button"
-        @click="onClickFirstPage"
-        :disabled="isInFirstPage"
-      >
-        &lt;&lt;-
-      </button>
-    </li> -->
-
     <li class="pagination-item">
       <button
+      class="btn-item"
         type="button"
         @click="onClickPreviousPage"
         :disabled="isInFirstPage"
@@ -21,14 +12,13 @@
       </button>
     </li>
 
-    <!-- Visible Buttons Start -->
-
     <li
       v-for="page in pages"
       class="pagination-item"
     >
       <button
         type="button"
+        class="btn-item"
         @click="onClickPage(page.name)"
         :disabled="page.isDisabled"
         :class="{ active: isPageActive(page.name) }"
@@ -37,10 +27,9 @@
       </button>
     </li>
 
-    <!-- Visible Buttons End -->
-
     <li class="pagination-item">
-      <button
+      <button 
+      class="btn-item"
         type="button"
         @click="onClickNextPage"
         :disabled="isInLastPage"
@@ -48,17 +37,6 @@
         -&gt;
       </button>
     </li>
-
-    <!-- <li class="pagination-item">
-      <button
-        type="button"
-        @click="onClickLastPage"
-        :disabled="isInLastPage"
-      >
-        Last
-      </button>
-    </li> -->
-
   </ul>
 </template>
 
@@ -113,17 +91,17 @@ export default {
       return this.currentPage === this.totalPages;
     },
     startPage() {
-      // When on the first page
+     
       if (this.currentPage === 1) {
         return 1;
       }
 
-      // When on the last page
+    
       if (this.currentPage === this.totalPages) {
         return this.totalPages - this.maxVisibleButtons;
       }
 
-      // When inbetween
+     
       return this.currentPage - 1;
     },
     pages() {
@@ -150,65 +128,38 @@ export default {
 .pagination {
   list-style-type: none;
   text-align: center;
+  cursor: pointer !important;
 }
 
 .pagination-item {
   display: inline-block;
+  padding: 10px;
 }
 
 .active {
-  background-color: #4AAE9B;
+  background-color: gray;
   color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2em;
+ 
 }
-</style>
+
+.btn-item {
+  cursor: pointer !important;
+}
+button {
+  background-color: #fff;
+  color: #000;
+  padding: 3px;
+  border: none;
+  font-size: 1em;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: gray;
+  color: white;
+  border-radius: 25px;
+}
 
 
-
-
-
-<!-- <template>
-    <div>
-        <ul class="pagination">
-            <li v-for="p in totalPages" :key="p">
-                <button class="pagination-button"
-                        :class="{active: currentPage === p}"
-                        @click="changePage(p)"
-                >{{p}}</button>
-            </li>
-        </ul>
-    </div>
-</template>
-
-<script>
-    export default {
-        name: "Pagination",
-        props: ['total', 'item'],
-        data() {
-            return {
-                currentPage: 1
-            }
-        },
-        computed: {
-            totalPages() {
-                return Math.ceil(this.total / this.item)
-            }
-        },
-        methods: {
-            changePage(pageNumber) {
-                this.currentPage = pageNumber
-                this.$emit('page-changed', pageNumber)
-            }
-        }
-    }
-</script>
-
-<style scoped>
-    .pagination-button {
-        background-color: white;
-        color: #1c1d21;
-        border: 1px solid #3b5998;
-    }
-    .active {
-        background-color: #1da1f2;
-    }
-</style> -->
+</style> 
